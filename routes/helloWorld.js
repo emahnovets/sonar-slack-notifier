@@ -1,5 +1,3 @@
-export default app => {
-    app.get('/hello', (request, response) => {
-        response.send('Hello World');
-    })
+export function get(request, response) {
+    response.send('Hello World');
 }
