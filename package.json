@@ -1,0 +1,28 @@
+{
+  "name": "sonar-slack-notifier",
+  "version": "0.0.1",
+  "description": "Simple server for parse and send sonar quality gate statuses to the slack channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyMahnovets/sonar-slack-notifier.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvgenyMahnovets/sonar-slack-notifier/issues"
+  },
+  "homepage": "https://github.com/EvgenyMahnovets/sonar-slack-notifier#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "esm": "^3.0.36",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nconf": "^0.10.0"
+  }
+}

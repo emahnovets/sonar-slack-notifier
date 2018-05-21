@@ -1,0 +1,10 @@
+{
+    "app": {
+        "port": 3000,
+        "host": "localhost",
+        "slack": {
+            "webhook": "YOUR_SLACK_WEBHOOK_URL",
+            "channel": "#general"
+        }
+    }
+}
