@@ -1,5 +1,5 @@
 import express from './express';
 
-export default app => {
-    express(app);
+export default (app) => {
+  express(app);
 };

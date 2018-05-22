@@ -1,3 +1,3 @@
 export function get(request, response) {
-    response.send('Hello World');
+  response.send('Hello World');
 }
