@@ -42,7 +42,7 @@ Add your server address as webhook in sonar project preferences (`Administration
 Fill URL wild with your sonar-slack-notifier server address:
 
 ```
-https://awesomeproject.com/sonarQube
+https://awesomeproject.com:3000/sonarQube
 ```
 
 Sonar project configuration example:
