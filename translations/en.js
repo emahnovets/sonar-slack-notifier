@@ -102,49 +102,12 @@ const metricTranslations = {
   violations: 'Issues',
 };
 
-export default class Attachment {
-  static get SingleCondition() {
-    return true;
-  }
+function capitalize(word) {
+  const [firstLetter, ...letters] = word;
 
-  static shouldUseCondition() {
-    return true;
-  }
+  return [firstLetter.toUpperCase(), ...letters].join('');
+}
 
-  constructor(conditions) {
-    this.conditions = conditions;
-  }
-
-  get Attachment() {
-    const [condition] = this.conditions;
-
-    return {
-      title: this.getMetricTranslation(condition.metric),
-      text: condition.value,
-      color: this.getColorByStatus(condition.status),
-    };
-  }
-
-  getColorByStatus(status) {
-    switch (status) {
-      case 'OK':
-        return 'good';
-      case 'WARN':
-        return 'warning';
-      case 'ERROR':
-        return 'danger';
-      default:
-        return '';
-    }
-  }
-
-  getMetricTranslation(metric) {
-    return metricTranslations[metric] || metric.split('_').map(word => this.capitalize(word)).join(' ');
-  }
-
-  capitalize(word) {
-    const [firstLetter, ...letters] = word;
-
-    return [firstLetter.toUpperCase(), ...letters].join('');
-  }
+export default function getMetricTranslation(metric) {
+  return metricTranslations[metric] || metric.split('_').map(word => capitalize(word)).join(' ');
 }

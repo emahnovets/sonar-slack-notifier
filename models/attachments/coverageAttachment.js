@@ -15,7 +15,7 @@ export default class CoverageAttachment extends Attachment {
     const [condition] = this.conditions;
 
     return {
-      title: 'Current Coverage Status',
+      title: 'Current Coverage:',
       text: `${condition.value}%`,
       color: '#439FE0',
     };

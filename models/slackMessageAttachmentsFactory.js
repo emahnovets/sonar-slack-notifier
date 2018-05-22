@@ -1,4 +1,4 @@
-import attachmentFormatters from './slackMessageAttachmentFormatters';
+import attachmentFormatters from './attachments';
 
 export default class SlackMessageAttachmentsFactory {
   constructor(conditions) {
