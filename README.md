@@ -37,4 +37,13 @@ npm start
 
 ## Sonar configuration
 
-Add your server address as webhook in sonar project preferences (`Administration > General Settings > Webhooks`)
+Add your server address as webhook in sonar project preferences (`Administration > General Settings > Webhooks`).
+
+Fill URL wild with your sonar-slack-notifier server address:
+
+```
+https://awesomeproject.com/sonarQube
+```
+
+Sonar project configuration example:
+![Configuration Example](https://i.imgur.com/5QpY26O.png)
