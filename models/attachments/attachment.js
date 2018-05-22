@@ -18,7 +18,7 @@ export default class Attachment {
 
     return {
       title: getMetricTranslation(condition.metric),
-      text: condition.value,
+      text: condition.value ? condition.value : '--',
       color: this.getColorByStatus(condition.status),
     };
   }
