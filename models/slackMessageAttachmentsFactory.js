@@ -22,6 +22,10 @@ export default class SlackMessageAttachmentsFactory {
   }
 
   getFormattedAttachments(Formatter, conditions) {
+    if (!conditions || conditions.length < 1) {
+      return [];
+    }
+
     return Formatter.SingleCondition ?
       conditions.map(condition => new Formatter([condition])) : [new Formatter(conditions)];
   }

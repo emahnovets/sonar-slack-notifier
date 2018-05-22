@@ -11,8 +11,8 @@ export default class SonarResult {
   get MessageTitle() {
     const analysedAt = new Date(this.analysedAt);
 
-    return `Project *${this.project.name}* was analyzed at ${analysedAt.toUTCString()}.
-    Quality Gate status: ${this.qualityGate.status}`;
+    return `Project *${this.project.name}* was analyzed at _${analysedAt.toUTCString()}_.\n` +
+      `Quality Gate status: *${this.qualityGate.status}*`;
   }
 
   get Attachments() {
