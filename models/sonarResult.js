@@ -5,13 +5,10 @@ export default class SonarResult {
   constructor(sonarResultRaw) {
     this.qualityGate = sonarResultRaw.qualityGate;
     this.project = sonarResultRaw.project;
-    this.analysedAt = sonarResultRaw.analysedAt;
   }
 
   get MessageTitle() {
-    const analysedAt = new Date(this.analysedAt);
-
-    return `Project *${this.project.name}* was analyzed at _${analysedAt.toUTCString()}_.\n` +
+    return `Project *${this.project.name}* was analyzed.\n` +
       `Quality Gate status: *${this.qualityGate.status}*`;
   }
 
