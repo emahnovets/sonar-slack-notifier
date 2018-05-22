@@ -1,10 +1,12 @@
 {
-    "app": {
-        "port": 3000,
-        "host": "localhost",
-        "slack": {
-            "webhook": "YOUR_SLACK_WEBHOOK_URL",
-            "channel": "#general"
-        }
+  "app": {
+    "port": 3000,
+    "host": "localhost",
+    "slack": {
+      "webhook": "YOUR_SLACK_WEBHOOK_URL",
+      "channel": "#general",
+      "username": "Sonar Quality Report",
+      "iconEmoji": ":gear:"
     }
+  }
 }
