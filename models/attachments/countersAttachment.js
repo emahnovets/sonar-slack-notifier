@@ -15,7 +15,7 @@ export default class CountersAttachment extends Attachment {
 
     return {
       title: 'Current Project Metrics:',
-      color: '#439FE0',
+      color: '',
       fields: this.conditions.map(condition => fieldFactory.getField(condition).Field),
     };
   }
