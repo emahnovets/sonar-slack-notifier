@@ -4,6 +4,8 @@ module.exports = {
         require: true
     },
     "rules": {
-        "import/prefer-default-export": 'warn'
+        "import/prefer-default-export": 'off',
+        "class-methods-use-this": 'off',
+        "max-len": ['error', 120]
     }
 };

@@ -1,5 +1,5 @@
 import SlackMessage from './slackMessage';
-import SlackMessageAttachment from './slackMessageAttachment';
+import SlackMessageAttachmentsFactory from './slackMessageAttachmentsFactory';
 
 export default class SonarResult {
   constructor(sonarResultRaw) {
@@ -11,25 +11,14 @@ export default class SonarResult {
   get MessageTitle() {
     const analysedAt = new Date(this.analysedAt);
 
-    return `Project *${this.project.name}* was analyzed at ${analysedAt.toUTCString()}. Quality Gate status: ${this.qualityGate.status}`;
+    return `Project *${this.project.name}* was analyzed at ${analysedAt.toUTCString()}.
+    Quality Gate status: ${this.qualityGate.status}`;
   }
 
   get Attachments() {
-    const countersConditions = this.CountersConditions;
-    const newConditions = this.NewConditions;
+    const attachmentsFactory = new SlackMessageAttachmentsFactory(this.qualityGate.conditions);
 
-    return [
-      (new SlackMessageAttachment(countersConditions, 'Current Project Counters')),
-      ...newConditions.map(condition => (new SlackMessageAttachment(condition))),
-    ];
-  }
-
-  get CountersConditions() {
-    return this.qualityGate.conditions.filter(condition => !condition.metric.match(/^new_.+/));
-  }
-
-  get NewConditions() {
-    return this.qualityGate.conditions.filter(condition => condition.metric.match(/^new_.+/));
+    return attachmentsFactory.Attachments;
   }
 
   get SlackMessage() {
